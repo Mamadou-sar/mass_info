@@ -1,4 +1,6 @@
 import React from 'react';
+import Post from '../../components/post/Post';
+import { articles } from '../../Datas';
 import './homePage.css';
 
 const HomePage = () => {
@@ -16,7 +18,21 @@ const HomePage = () => {
                </div>
             </div>
          </header>
-         <main></main>
+         <main className='container'>
+            <h4>A la Une</h4>
+            <div className='articles'>
+               <div className='posts'>
+                  {articles.map((article) => {
+                     return <Post key={article.id} data={article} />;
+                  })}
+               </div>
+               <div className='recent'>
+                  <div className='space_pub'></div>
+                  <div className='posts_recent'></div>
+                  <div className='blog'></div>
+               </div>
+            </div>
+         </main>
       </>
    );
 };
